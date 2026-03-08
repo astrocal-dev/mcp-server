@@ -1,0 +1,66 @@
+{
+  "name": "@astrocal/mcp-server",
+  "version": "0.1.1",
+  "type": "module",
+  "description": "MCP server for Astrocal scheduling API — manage bookings from AI agents via the Model Context Protocol",
+  "author": "Astrocal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astrocal-dev/mcp-server"
+  },
+  "homepage": "https://astrocal.dev",
+  "bugs": {
+    "url": "https://github.com/astrocal-dev/mcp-server/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "astrocal-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "posthog-node": "^5.24.17",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "scheduling",
+    "calendar",
+    "ai-agents",
+    "booking",
+    "astrocal",
+    "claude",
+    "claude-desktop"
+  ]
+}
