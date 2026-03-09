@@ -105,6 +105,25 @@ List bookings with optional filters.
 
 List available event types that can be booked. No input required.
 
+### `join_waitlist`
+
+Join the waitlist for a fully booked event type.
+
+**Input:**
+
+- `event_type_id` (string, required) — Event type to join the waitlist for
+- `name` (string, required) — Full name
+- `email` (string, required) — Email address
+- `preferred_times` (string, optional) — Preferred time ranges or notes
+
+### `check_waitlist`
+
+Check your position on a waitlist.
+
+**Input:**
+
+- `waitlist_entry_id` (string, required) — Waitlist entry ID returned from `join_waitlist`
+
 ## Example Conversation
 
 > **User:** "What meetings can I book?"
@@ -122,6 +141,12 @@ List available event types that can be booked. No input required.
 > **User:** "Actually, move it to 3pm"
 >
 > **Agent:** _calls `reschedule_booking`_ — "Rescheduled to 3:00 PM. Jane has been notified."
+
+## Links
+
+- [Documentation](https://astrocal.dev/docs)
+- [GitHub](https://github.com/astrocal-dev/mcp-server)
+- [Issues](https://github.com/astrocal-dev/mcp-server/issues)
 
 ## License
 
