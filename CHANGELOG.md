@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2 (2026-03-09)
+
+### Features
+
+- add public repo sync workflow and update repo URLs (0692957)
+
+### Documentation
+
+- update mcp-server README with waitlist tools and public repo links (17529ad)
+
 ## 0.1.1 (2026-03-08)
 
 ### Features
