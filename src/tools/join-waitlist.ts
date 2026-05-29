@@ -85,6 +85,6 @@ export async function joinWaitlist(
   } catch (error) {
     if (error instanceof z.ZodError) throw error;
     const mcpError = mapApiErrorToMcpError(error);
-    throw new Error(mcpError.message);
+    throw new Error(mcpError.message, { cause: error });
   }
 }
