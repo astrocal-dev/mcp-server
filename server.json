@@ -1,0 +1,41 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.astrocal/mcp-server",
+  "description": "AI-native scheduling: check availability, book meetings, cancel and reschedule via MCP",
+  "repository": {
+    "url": "https://github.com/astrocal-dev/mcp-server",
+    "source": "github"
+  },
+  "version": "0.1.2",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@astrocal/mcp-server",
+      "version": "0.1.2",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "ASTROCAL_API_KEY",
+          "description": "Your Astrocal API key (get one at https://astrocal.dev/dashboard/api-keys)",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true
+        },
+        {
+          "name": "ASTROCAL_API_URL",
+          "description": "Custom API base URL (defaults to https://api.astrocal.dev)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        },
+        {
+          "name": "ASTROCAL_DEFAULT_EVENT_TYPE_ID",
+          "description": "Default event type ID when not specified in tool calls",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
