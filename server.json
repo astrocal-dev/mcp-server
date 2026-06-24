@@ -8,17 +8,23 @@
     "url": "https://github.com/astrocal-dev/mcp-server",
     "source": "github"
   },
-  "version": "0.1.3",
+  "version": "0.1.5",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.astrocal.dev/mcp"
+    }
+  ],
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@astrocal/mcp-server",
-      "version": "0.1.3",
+      "version": "0.1.5",
       "transport": { "type": "stdio" },
       "environmentVariables": [
         {
           "name": "ASTROCAL_API_KEY",
-          "description": "Your Astrocal API key (get one at https://astrocal.dev/dashboard/api-keys)",
+          "description": "Your Astrocal API key (create one at https://astrocal.dev/dashboard/connect)",
           "isRequired": true,
           "format": "string",
           "isSecret": true

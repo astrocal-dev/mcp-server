@@ -3,7 +3,7 @@
   "manifest_version": "0.3",
   "name": "astrocal",
   "display_name": "Astrocal",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "AI-native scheduling: check availability, book meetings, cancel and reschedule via MCP",
   "long_description": "Astrocal lets your AI assistant manage scheduling end to end: list event types, check availability, and create, cancel, or reschedule bookings — plus join and check waitlists. This bundle wraps the published @astrocal/mcp-server stdio server and prompts you for your Astrocal API key at install.",
   "author": {
