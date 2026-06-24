@@ -39,6 +39,7 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
+    "bundle": "pnpm build && mcpb validate manifest.json && mcpb pack . astrocal.mcpb",
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@anthropic-ai/mcpb": "2.1.2",
     "@types/node": "^25.9.1",
     "tsup": "^8.5.1",
     "tsx": "^4.22.3",

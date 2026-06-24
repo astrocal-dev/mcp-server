@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/mcpb/main/dist/manifest.schema.json",
+  "manifest_version": "0.3",
+  "name": "astrocal",
+  "display_name": "Astrocal",
+  "version": "0.1.3",
+  "description": "AI-native scheduling: check availability, book meetings, cancel and reschedule via MCP",
+  "long_description": "Astrocal lets your AI assistant manage scheduling end to end: list event types, check availability, and create, cancel, or reschedule bookings — plus join and check waitlists. This bundle wraps the published @astrocal/mcp-server stdio server and prompts you for your Astrocal API key at install.",
+  "author": {
+    "name": "Astrocal",
+    "url": "https://astrocal.dev"
+  },
+  "homepage": "https://astrocal.dev",
+  "documentation": "https://astrocal.dev/docs/guides/mcp-integration",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astrocal-dev/mcp-server"
+  },
+  "license": "MIT",
+  "keywords": ["scheduling", "calendar", "booking", "ai-agents", "claude", "astrocal"],
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "npx",
+      "args": ["-y", "@astrocal/mcp-server"],
+      "env": {
+        "ASTROCAL_API_KEY": "${user_config.api_key}",
+        "ASTROCAL_DEFAULT_EVENT_TYPE_ID": "${user_config.default_event_type_id}"
+      }
+    }
+  },
+  "tools": [
+    { "name": "list_event_types", "description": "List available event types that can be booked" },
+    { "name": "check_availability", "description": "Get available booking slots for a date range" },
+    { "name": "create_booking", "description": "Book a meeting at a specific time" },
+    { "name": "cancel_booking", "description": "Cancel an existing booking" },
+    { "name": "reschedule_booking", "description": "Reschedule a booking to a new time" },
+    {
+      "name": "list_bookings",
+      "description": "List bookings with optional status and event type filters"
+    },
+    {
+      "name": "join_waitlist",
+      "description": "Add an invitee to the waitlist for a fully-booked event type"
+    },
+    { "name": "check_waitlist", "description": "Check waitlist position for an invitee" }
+  ],
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "Astrocal API Key",
+      "description": "Your Astrocal API key. Create one at https://astrocal.dev/dashboard/connect",
+      "required": true,
+      "sensitive": true
+    },
+    "default_event_type_id": {
+      "type": "string",
+      "title": "Default Event Type ID",
+      "description": "Optional. The event type used when a tool call does not specify one.",
+      "required": false,
+      "sensitive": false
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=18"
+    }
+  }
+}
