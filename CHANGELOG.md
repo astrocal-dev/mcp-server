@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.6 (2026-06-24)
+
+### Features
+
+- Bundle the shared tool core into the published package so it is fully self-contained (`npx -y @astrocal/mcp-server` works with no extra resolution).
+- Advertise the hosted remote connector (`https://api.astrocal.dev/mcp`) alongside the npm package in the MCP Registry `server.json`.
+
+### Fixes
+
+- Emit a single shebang in the built bundle (a duplicate previously broke the bin entry point).
+- Add a `prepublishOnly` guard that fails the publish if the bundle is not self-contained.
+
 ## 0.1.2 (2026-03-09)
 
 ### Features

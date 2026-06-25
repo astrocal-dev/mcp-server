@@ -8,7 +8,7 @@
     "url": "https://github.com/astrocal-dev/mcp-server",
     "source": "github"
   },
-  "version": "0.1.5",
+  "version": "0.1.6",
   "remotes": [
     {
       "type": "streamable-http",
@@ -19,7 +19,7 @@
     {
       "registryType": "npm",
       "identifier": "@astrocal/mcp-server",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "transport": { "type": "stdio" },
       "environmentVariables": [
         {
